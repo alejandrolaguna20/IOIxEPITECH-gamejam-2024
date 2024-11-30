@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j21tpm6adex7"
-path="res://.godot/imported/Blue Knight idle Sprite-sheet 16x16.png-e9060bae0af57ffc92339122d02240b4.ctex"
+uid="uid://cdu28nh06uqew"
+path="res://.godot/imported/Blue Knight R1 16x17.png-413eac9c658b44ce7b86b7264ee5d0dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animation_player_1/Blue Knight idle Sprite-sheet 16x16.png"
-dest_files=["res://.godot/imported/Blue Knight idle Sprite-sheet 16x16.png-e9060bae0af57ffc92339122d02240b4.ctex"]
+source_file="res://assets/animation_player_1/Blue Knight R1 16x17.png"
+dest_files=["res://.godot/imported/Blue Knight R1 16x17.png-413eac9c658b44ce7b86b7264ee5d0dd.ctex"]
 
 [params]
 
