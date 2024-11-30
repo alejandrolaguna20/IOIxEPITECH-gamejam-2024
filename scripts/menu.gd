@@ -1,17 +1,9 @@
 extends Control
 
-@onready var world = $"../../"
-
-func _on_resume_pressed() -> void:
-	world.pauseMenu()
-	
-
-
-
 
 
 func _on_play_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/tutorial.tscn")
 
 
 func _on_quit_pressed() -> void:
