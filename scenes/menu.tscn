@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1ooeyqo02miw"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_bews3"]
+[ext_resource type="FontFile" uid="uid://wmoux55hcjkr" path="res://assets/DungeonFont.ttf" id="2_27ydo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_16vwm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vj7rq"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bews3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0941176, 0.0784314, 0.145098, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -279.0
+offset_top = -151.0
+offset_right = 280.0
+offset_bottom = 209.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="Play" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.0941176, 0.0784314, 0.145098, 1)
+theme_override_fonts/font = ExtResource("2_27ydo")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxEmpty_16vwm")
+text = "Play"
+
+[node name="Quit" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_27ydo")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vj7rq")
+text = "Quit"
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
