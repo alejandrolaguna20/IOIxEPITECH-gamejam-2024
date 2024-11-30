@@ -11,3 +11,6 @@ func _on_body_entered(body: Node) -> void:
 
 func _on_player_green_new_level() -> void:
 	get_tree().change_scene_to_file("res://scenes/" + target_scene + ".tscn")
+
+func _on_player_blue_new_level() -> void:
+	get_tree().change_scene_to_file("res://scenes/" + target_scene + ".tscn")

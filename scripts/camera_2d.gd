@@ -10,10 +10,9 @@ var is_transitioning: bool = false
 var target_position: Vector2
 
 func _ready():
-	if player1 == null or player2 == null:
+	if player1 == null:
 		push_error("¡Error! Player1 o Player2 no están asignados en la cámara")
 		return
-		
 	switch_to_player(player1)
 	position = current_target.position
 
