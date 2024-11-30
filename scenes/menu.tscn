@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1ooeyqo02miw"]
+[gd_scene load_steps=8 format=3 uid="uid://b1ooeyqo02miw"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_bews3"]
 [ext_resource type="FontFile" uid="uid://wmoux55hcjkr" path="res://assets/DungeonFont.ttf" id="2_27ydo"]
 [ext_resource type="Texture2D" uid="uid://d0op4cqsd6sas" path="res://assets/animation_player_1/Blue Knight frontview 16x16.png" id="3_1hfep"]
 [ext_resource type="Texture2D" uid="uid://b2ovwelb40uyk" path="res://assets/animation_player_2/single_sprite.png" id="4_8o8w8"]
+[ext_resource type="PackedScene" uid="uid://46dtvbo23bii" path="res://scenes/credits.tscn" id="5_4hjmy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_16vwm"]
 
@@ -100,6 +101,12 @@ theme_override_fonts/font = ExtResource("2_27ydo")
 theme_override_font_sizes/font_size = 150
 text = "Dungeon"
 
+[node name="Control" parent="." instance=ExtResource("5_4hjmy")]
+layout_mode = 1
+offset_top = 707.0
+offset_bottom = 707.0
+
 [connection signal="pressed" from="ColorRect/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/Credits" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

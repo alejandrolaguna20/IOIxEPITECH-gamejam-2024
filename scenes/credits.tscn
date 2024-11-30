@@ -1,0 +1,103 @@
+[gd_scene load_steps=3 format=3 uid="uid://46dtvbo23bii"]
+
+[ext_resource type="Script" path="res://scripts/credits.gd" id="1_ii0f5"]
+[ext_resource type="FontFile" uid="uid://wmoux55hcjkr" path="res://assets/DungeonFont.ttf" id="1_m5cad"]
+
+[node name="credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ii0f5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0941176, 0.0784314, 0.145098, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 414.0
+offset_top = -323.0
+offset_right = 737.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.48, 0.48)
+theme_override_constants/separation = 60
+metadata/_edit_group_ = true
+
+[node name="Return" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_m5cad")
+theme_override_font_sizes/font_size = 100
+text = "Return"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -574.0
+offset_top = -260.0
+offset_right = 1807.0
+offset_bottom = 1007.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.48, 0.48)
+theme_override_constants/separation = 60
+metadata/_edit_group_ = true
+
+[node name="first_part_label" type="Label" parent="ColorRect/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.396078, 0.45098, 0.572549, 1)
+theme_override_fonts/font = ExtResource("1_m5cad")
+theme_override_font_sizes/font_size = 34
+text = "Dive the 
+Dive the 
+Dive the 
+
+Dive the 
+Dive the 
+Dive the 
+Dive the 
+
+v
+v
+v
+Dive the 
+v
+v
+Dive the 
+
+Dive the 
+v
+Dive the 
+v
+v
+v
+v
+v
+v
+v
+Dive the 
+v
+v
+Dive the 
+
+"
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/Return" to="." method="_on_return_pressed"]

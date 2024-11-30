@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d0o2feealif20"]
 
 [ext_resource type="Texture2D" uid="uid://mijb8pclefui" path="res://assets/green_vase.png" id="1_p3t10"]
-[ext_resource type="Script" path="res://scenes/movable_box.gd" id="1_q11gj"]
+[ext_resource type="Script" path="res://scripts/movable_box.gd" id="1_q11gj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jnyd4"]
 size = Vector2(14, 15)
