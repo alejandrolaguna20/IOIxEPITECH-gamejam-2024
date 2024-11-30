@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="IOI x EPITECH GameJam 2024"
-run/main_scene="res://player_1.tscn"
+run/main_scene="res://scenes/tutorial.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[file_customization]
+
+folder_colors={
+"res://assets/": "teal",
+"res://resources/": "blue",
+"res://scenes/": "purple"
+}
 
 [input]
 
