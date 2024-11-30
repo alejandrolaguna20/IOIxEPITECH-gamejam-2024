@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdu28nh06uqew"
-path="res://.godot/imported/Blue Knight R1 16x17.png-3d747f53ccc8f35328a038f37bb8f751.ctex"
+uid="uid://bux5l706nk4fp"
+path="res://.godot/imported/Blue Knight run Sprite-sheet 16x17.png-54c78f1aba9d540dc7f9e40eac059d8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animation_player_1/Blue Knight R1 16x17.png"
-dest_files=["res://.godot/imported/Blue Knight R1 16x17.png-3d747f53ccc8f35328a038f37bb8f751.ctex"]
+source_file="res://assets/animation_player_1/Blue Knight run Sprite-sheet 16x17.png"
+dest_files=["res://.godot/imported/Blue Knight run Sprite-sheet 16x17.png-54c78f1aba9d540dc7f9e40eac059d8a.ctex"]
 
 [params]
 
