@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=4 uid="uid://cdvb1xs7ej821"]
+[gd_scene load_steps=13 format=4 uid="uid://cdvb1xs7ej821"]
 
 [ext_resource type="Texture2D" uid="uid://gn1tporne245" path="res://assets/Set 1.png" id="1_q4evt"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_re47v"]
 [ext_resource type="PackedScene" uid="uid://bopyqhoe76x61" path="res://scenes/player_1.tscn" id="2_ucot8"]
 [ext_resource type="TileSet" uid="uid://c47ohryib8paj" path="res://resources/controls.tres" id="3_368sf"]
 [ext_resource type="PackedScene" uid="uid://dfsgen5dqmxj" path="res://scenes/player_2.tscn" id="3_kjrie"]
@@ -328,6 +329,7 @@ sources/0 = SubResource("TileSetAtlasSource_xofa5")
 size = Vector2(48, 28)
 
 [node name="world" type="Node2D"]
+script = ExtResource("1_re47v")
 
 [node name="basic floor" type="TileMapLayer" parent="."]
 position = Vector2(213, 101)
@@ -385,20 +387,6 @@ script = ExtResource("6_40i57")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="change_level"]
 shape = SubResource("RectangleShape2D_afpry")
-
-[node name="Menu" type="CanvasLayer" parent="."]
-
-[node name="Panel" type="Panel" parent="Menu"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Button" type="Button" parent="Menu"]
-offset_right = 8.0
-offset_bottom = 8.0
-
-[node name="Label" type="Label" parent="Menu"]
-offset_right = 40.0
-offset_bottom = 23.0
 
 [connection signal="body_entered" from="change_level" to="player_blue" method="_on_change_level_body_entered"]
 [connection signal="body_exited" from="change_level" to="player_green" method="_on_change_level_body_exited"]
