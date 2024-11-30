@@ -1,14 +1,14 @@
 extends CharacterBody2D
 
-@export var speed = 100.0
-@export var acceleration = 800.0
+@export var speed = 80.0
+@export var acceleration = 600.0
 
 @onready var animated_sprite = $AnimatedSprite2D
-
 var last_direction = "down"
 
 func _ready():
-	play_animation("idle_" + last_direction)
+	# El jugador comienza inactivo si no es el objetivo inicial de la cámara
+	set_physics_process(false)
 
 func _physics_process(delta):
 	var input_dir = Vector2.ZERO
@@ -22,7 +22,6 @@ func _physics_process(delta):
 		velocity = velocity.move_toward(input_dir * speed, acceleration * delta)
 	
 	move_and_slide()
-	
 	handle_animations(input_dir)
 
 func handle_animations(input_dir: Vector2):
