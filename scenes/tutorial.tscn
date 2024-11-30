@@ -369,13 +369,14 @@ text = "Dungeon"
 position = Vector2(219, 119)
 zoom = Vector2(5, 5)
 script = ExtResource("3_m121t")
-player1 = NodePath("../player_1")
-player2 = NodePath("../player_2")
+player1 = NodePath("../player_blue")
+player2 = NodePath("../player_green")
 
-[node name="player_1" parent="." instance=ExtResource("2_ucot8")]
+[node name="player_blue" parent="." instance=ExtResource("2_ucot8")]
 position = Vector2(314, 139)
+is_starting_player = true
 
-[node name="player_2" parent="." instance=ExtResource("3_kjrie")]
+[node name="player_green" parent="." instance=ExtResource("3_kjrie")]
 position = Vector2(82, 135)
 
 [node name="change_level" type="Area2D" parent="."]
@@ -385,9 +386,21 @@ script = ExtResource("6_40i57")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="change_level"]
 shape = SubResource("RectangleShape2D_afpry")
 
-[connection signal="new_level" from="player_1" to="change_level" method="_on_player_new_level"]
-[connection signal="new_level" from="player_2" to="change_level" method="_on_player_2_new_level"]
-[connection signal="body_entered" from="change_level" to="player_1" method="_on_change_level_body_entered"]
-[connection signal="body_exited" from="change_level" to="player_2" method="_on_change_level_body_exited"]
-[connection signal="new_level" from="change_level" to="player_1" method="_on_change_level_new_level"]
-[connection signal="new_level" from="change_level" to="player_2" method="_on_change_level_new_level"]
+[node name="Menu" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="Menu"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="Menu"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Label" type="Label" parent="Menu"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="body_entered" from="change_level" to="player_blue" method="_on_change_level_body_entered"]
+[connection signal="body_exited" from="change_level" to="player_green" method="_on_change_level_body_exited"]
+[connection signal="new_level" from="change_level" to="player_blue" method="_on_change_level_new_level"]
+[connection signal="new_level" from="change_level" to="player_green" method="_on_change_level_new_level"]
