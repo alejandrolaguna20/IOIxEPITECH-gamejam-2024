@@ -329,6 +329,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_xofa5")
 
 [node name="world" type="Node2D"]
+position = Vector2(-46, -4)
 script = ExtResource("1_re47v")
 
 [node name="change_level" type="Area2D" parent="."]
@@ -377,7 +378,7 @@ text = "Dungeon"
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player1")]
 position = Vector2(219, 119)
-zoom = Vector2(5, 5)
+zoom = Vector2(3.5, 3.5)
 script = ExtResource("3_m121t")
 player1 = NodePath("../player_blue")
 
@@ -395,7 +396,7 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="player_blue" parent="." instance=ExtResource("2_ucot8")]
-position = Vector2(314, 139)
+position = Vector2(94, 152)
 speed = 100.0
 is_starting_player = true
 
