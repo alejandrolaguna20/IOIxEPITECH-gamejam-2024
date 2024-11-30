@@ -1,14 +1,16 @@
+# CharacterBody2D Script
 extends CharacterBody2D
 
-@export var speed = 80.0
-@export var acceleration = 600.0
-
+@export var speed = 100.0
+@export var acceleration = 800.0
 @onready var animated_sprite = $AnimatedSprite2D
+
 var last_direction = "down"
 
+signal new_level
+
 func _ready():
-	# El jugador comienza inactivo si no es el objetivo inicial de la cámara
-	set_physics_process(false)
+	play_animation("idle_" + last_direction)
 
 func _physics_process(delta):
 	var input_dir = Vector2.ZERO
@@ -22,6 +24,7 @@ func _physics_process(delta):
 		velocity = velocity.move_toward(input_dir * speed, acceleration * delta)
 	
 	move_and_slide()
+	
 	handle_animations(input_dir)
 
 func handle_animations(input_dir: Vector2):
@@ -46,3 +49,11 @@ func handle_animations(input_dir: Vector2):
 func play_animation(anim_name: String):
 	if animated_sprite.animation != anim_name:
 		animated_sprite.play(anim_name)
+
+func _on_change_level_body_entered(body: Node2D) -> void:
+	print("entered change level")
+	emit_signal("new_level")
+
+
+func _on_change_level_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.

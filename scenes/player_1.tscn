@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://dj4cgwutw0qk0"]
+[gd_scene load_steps=70 format=3 uid="uid://bopyqhoe76x61"]
 
 [ext_resource type="Script" path="res://scripts/player_1.gd" id="1_7tjtb"]
 [ext_resource type="Texture2D" uid="uid://j21tpm6adex7" path="res://assets/animation_player_1/Blue Knight idle Sprite-sheet 16x16.png" id="2_mrpsy"]
