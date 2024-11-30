@@ -55,7 +55,3 @@ func play_animation(anim_name: String):
 func _on_change_level_body_entered(body: Node2D) -> void:
 	print("entered change level")
 	emit_signal("new_level")
-
-
-func _on_change_level_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.

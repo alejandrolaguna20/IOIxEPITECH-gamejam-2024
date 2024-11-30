@@ -34,10 +34,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -308.0
-offset_top = 17.0
-offset_right = 251.0
-offset_bottom = 377.0
+offset_left = -279.0
+offset_top = -151.0
+offset_right = 280.0
+offset_bottom = 209.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 40
@@ -57,6 +57,7 @@ theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxEmpty_vj7rq")
 text = "Quit"
 
+<<<<<<< HEAD
 [node name="Blue_knight" type="Sprite2D" parent="."]
 position = Vector2(192, 430)
 scale = Vector2(19.84, 19.84)
@@ -90,5 +91,7 @@ theme_override_fonts/font = ExtResource("2_27ydo")
 theme_override_font_sizes/font_size = 150
 text = "Dungeon"
 
+=======
+>>>>>>> 01102b658ef5afb15f4b28e3e0bc9afe7b2a917b
 [connection signal="pressed" from="ColorRect/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
