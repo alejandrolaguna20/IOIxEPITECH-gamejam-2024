@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=4 uid="uid://c37cb61ixodmi"]
+[gd_scene load_steps=10 format=4 uid="uid://c37cb61ixodmi"]
 
 [ext_resource type="TileSet" uid="uid://1b7jh4qrhvc2" path="res://resources/dungeon_tileset.tres" id="1_3nhgr"]
 [ext_resource type="Texture2D" uid="uid://8e3nhnypq3je" path="res://assets/tilesheet_bridge.png" id="2_ga7ww"]
 [ext_resource type="PackedScene" uid="uid://bopyqhoe76x61" path="res://scenes/player_1.tscn" id="3_dmw6u"]
 [ext_resource type="PackedScene" uid="uid://dfsgen5dqmxj" path="res://scenes/player_2.tscn" id="4_dy7l6"]
+[ext_resource type="Texture2D" uid="uid://d0op4cqsd6sas" path="res://assets/animation_player_1/Blue Knight frontview 16x16.png" id="5_r08me"]
+[ext_resource type="Script" path="res://scripts/camera_2d.gd" id="6_ejd3b"]
+[ext_resource type="PackedScene" uid="uid://c3mhggyp4u2le" path="res://scenes/pause_menu.tscn" id="7_vm1vn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q7200"]
 texture = ExtResource("2_ga7ww")
@@ -214,3 +217,27 @@ is_starting_player = true
 
 [node name="player_2" parent="." instance=ExtResource("4_dy7l6")]
 position = Vector2(98, 26)
+
+[node name="BlueKnightFrontview16x16" type="Sprite2D" parent="."]
+position = Vector2(45, 53)
+texture = ExtResource("5_r08me")
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player1", "player2")]
+position = Vector2(219, 119)
+zoom = Vector2(5, 5)
+script = ExtResource("6_ejd3b")
+player1 = NodePath("../player_1")
+player2 = NodePath("../player_2")
+
+[node name="PauseMenu" parent="Camera2D" instance=ExtResource("7_vm1vn")]
+visible = false
+z_index = 10
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -32.0
+offset_top = -31.0
+offset_right = -32.0
+offset_bottom = -31.0
+grow_horizontal = 1
+grow_vertical = 1

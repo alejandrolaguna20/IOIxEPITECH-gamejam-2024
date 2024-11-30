@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1ooeyqo02miw"]
+[gd_scene load_steps=5 format=3 uid="uid://b1ooeyqo02miw"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_bews3"]
 [ext_resource type="FontFile" uid="uid://wmoux55hcjkr" path="res://assets/DungeonFont.ttf" id="2_27ydo"]
-[ext_resource type="Texture2D" uid="uid://d0op4cqsd6sas" path="res://assets/animation_player_1/Blue Knight frontview 16x16.png" id="3_1hfep"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_16vwm"]
 
@@ -33,10 +32,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -308.0
-offset_top = 17.0
-offset_right = 251.0
-offset_bottom = 377.0
+offset_left = -279.0
+offset_top = -151.0
+offset_right = 280.0
+offset_bottom = 209.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 40
@@ -55,34 +54,6 @@ theme_override_fonts/font = ExtResource("2_27ydo")
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = SubResource("StyleBoxEmpty_vj7rq")
 text = "Quit"
-
-[node name="Green_knight" type="Sprite2D" parent="."]
-position = Vector2(226, 351)
-scale = Vector2(26.4, 26.4)
-texture = ExtResource("3_1hfep")
-
-[node name="Blue_Knight" type="Sprite2D" parent="."]
-
-[node name="first_part_label" type="Label" parent="."]
-offset_left = 310.0
-offset_top = 34.0
-offset_right = 793.0
-offset_bottom = 185.0
-theme_override_colors/font_color = Color(0.396078, 0.45098, 0.572549, 1)
-theme_override_fonts/font = ExtResource("2_27ydo")
-theme_override_font_sizes/font_size = 150
-text = "Dive the 
-"
-
-[node name="first_part_label2" type="Label" parent="."]
-offset_left = 374.0
-offset_top = 136.0
-offset_right = 856.0
-offset_bottom = 287.0
-theme_override_colors/font_color = Color(0.780392, 0.811765, 0.866667, 1)
-theme_override_fonts/font = ExtResource("2_27ydo")
-theme_override_font_sizes/font_size = 150
-text = "Dungeon"
 
 [connection signal="pressed" from="ColorRect/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
