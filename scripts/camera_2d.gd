@@ -62,4 +62,4 @@ func handle_transition(delta):
 	else:
 		# Movernos en línea recta hacia el objetivo
 		var direction = (target_position - position).normalized()
-		position += direction * transition_speed * delta
+		position += direction * transition_speed * delta * 3

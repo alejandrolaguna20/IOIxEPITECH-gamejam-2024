@@ -9,7 +9,7 @@
 [ext_resource type="TileSet" uid="uid://1b7jh4qrhvc2" path="res://resources/dungeon_tileset.tres" id="3_mf5hu"]
 [ext_resource type="FontFile" uid="uid://wmoux55hcjkr" path="res://assets/DungeonFont.ttf" id="4_v84fl"]
 [ext_resource type="Script" path="res://scripts/change_level.gd" id="6_40i57"]
-[ext_resource type="PackedScene" uid="uid://c3mhggyp4u2le" path="res://scenes/pause_menu.tscn" id="10_cyenw"]
+[ext_resource type="PackedScene" uid="uid://c3mhggyp4u2le" path="res://scenes/pause_menu.tscn" id="7_yvptw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xofa5"]
 texture = ExtResource("1_q4evt")
@@ -375,29 +375,39 @@ script = ExtResource("3_m121t")
 player1 = NodePath("../player_blue")
 player2 = NodePath("../player_green")
 
-[node name="PauseMenu" parent="Camera2D" instance=ExtResource("10_cyenw")]
+[node name="PauseMenu" parent="Camera2D" instance=ExtResource("7_yvptw")]
 visible = false
 z_index = 10
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = -32.0
 offset_top = -31.0
 offset_right = -32.0
 offset_bottom = -31.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="player_blue" parent="." instance=ExtResource("2_ucot8")]
 position = Vector2(314, 139)
+speed = 100.0
 is_starting_player = true
 
 [node name="player_green" parent="." instance=ExtResource("3_kjrie")]
 position = Vector2(82, 135)
+speed = 50.0
 
 [node name="change_level" type="Area2D" parent="."]
 position = Vector2(671, 19)
 script = ExtResource("6_40i57")
+target_scene = "levels/level_boxes"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="change_level"]
 shape = SubResource("RectangleShape2D_afpry")
 
+[connection signal="new_level" from="player_blue" to="." method="_on_player_new_level"]
+[connection signal="new_level" from="player_green" to="." method="_on_player_new_level"]
 [connection signal="body_entered" from="change_level" to="player_blue" method="_on_change_level_body_entered"]
-[connection signal="body_exited" from="change_level" to="player_green" method="_on_change_level_body_exited"]
+[connection signal="body_entered" from="change_level" to="player_green" method="_on_change_level_body_entered"]
 [connection signal="new_level" from="change_level" to="player_blue" method="_on_change_level_new_level"]
 [connection signal="new_level" from="change_level" to="player_green" method="_on_change_level_new_level"]

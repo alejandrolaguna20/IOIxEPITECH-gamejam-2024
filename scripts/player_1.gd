@@ -7,6 +7,8 @@ extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
 var last_direction = "down"
 
+signal new_level
+
 func _ready():
 	# El jugador comenzará activo si es el jugador inicial
 	set_physics_process(is_starting_player)

@@ -18,3 +18,7 @@ func pauseMenu():
 	
 	paused = !paused
  
+
+
+func _on_player_new_level() -> void:
+	pass # Replace with function body.
