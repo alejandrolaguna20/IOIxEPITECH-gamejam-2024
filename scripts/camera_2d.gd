@@ -3,7 +3,7 @@ extends Camera2D
 @export var player1: CharacterBody2D
 @export var player2: CharacterBody2D
 @export var transition_speed: float = 400.0
-@export var camera_switch_key: String = "ui_focus_next"
+@export var camera_switch_key: String = "next_player"
 
 var current_target: CharacterBody2D
 var is_transitioning: bool = false
